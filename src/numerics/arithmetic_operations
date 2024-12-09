@@ -19,3 +19,12 @@ divide(Num1, Num2) ->
     True ->
         Num1/Num2.
 
+
+
+remainder(Num1, Num2) ->
+
+    Num1 rem Num2.
+power(Num1, Num2) ->
+    math:pow(Num1,Num2).
+
+
