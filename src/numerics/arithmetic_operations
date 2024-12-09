@@ -32,3 +32,9 @@ power(Num1, Num2) ->
 
 divideInteger(Num1, Num2) ->
     Num1 div Num2.
+squareRoot(Num) ->
+    math:sqrt(Num).
+
+
+
+
