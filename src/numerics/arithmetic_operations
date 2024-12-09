@@ -3,3 +3,8 @@
 
 add(Num1, Num2) ->
     Num1 + Num2.
+
+minus(Num1, Num2) ->
+    Num1 - Num2.
+
+
