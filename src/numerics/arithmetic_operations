@@ -38,3 +38,28 @@ squareRoot(Num) ->
 
 
 
+
+
+factorial(0) ->
+    1;
+
+
+factorial(Num) when N>0 ->
+    Num*factorial(Num-1).
+
+
+is_equal     (Num1, Num2) ->
+    Num1 == Num2.
+is_greaterThan (Num1, Num1) ->
+    Num1 > Num2.
+
+
+
+
+isLessThan(Num1, Num2) ->
+    Num1 < Num2.
+
+
+
+
+
