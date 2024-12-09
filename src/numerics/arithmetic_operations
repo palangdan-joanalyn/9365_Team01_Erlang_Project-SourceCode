@@ -8,3 +8,14 @@ minus(Num1, Num2) ->
     Num1 - Num2.
 
 
+
+
+
+multiply(Num1, Num2) ->
+    Num1*Num2.
+divide(Num1, Num2) ->
+    if (Num2 == 0) ->
+        _,
+    True ->
+        Num1/Num2.
+
