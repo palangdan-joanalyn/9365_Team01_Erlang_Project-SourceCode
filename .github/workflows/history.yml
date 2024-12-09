@@ -1,30 +1,38 @@
 name: Push to History Repository
 
 on: 
-  push:
-    branches:
-      - main  # Script is triggered whenever there is a push to the main branch
+    push:
+        # branches:
+        #   - main  # Script is triggered whenever there is a push to the main branch
+        tags:
+            - '*' # Triggered when a new tag is created in the main repository
 
 jobs:
-  push-to-history:
-    runs-on: ubuntu-latest
+    push-to-history:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+        steps:
+            -   name: Checkout Code
+                uses: actions/checkout@v3
+                with:
+                    fetch-depth: 0
 
-      - name: Configure Git User
-        run: |
-          git config user.email "actions@github.com"
-          git config user.name "Erlang Actions Bot"
+            -   name: Configure Git User
+                run: |
+                    git config user.email "actions@github.com"
+                    git config user.name "Erlang Actions Bot"
           
-      - name: Push to History Repository
-        env:
-          GITHUB_TOKEN: ${{ secrets.ERLANG_HISTORY_WORKFLOW }}
-        run: |
-          echo "Check history repository"
-          git remote add history https://x-access-token:${{ secrets.ERLANG_HISTORY_WORKFLOW }}@github.com/palangdan-joanalyn/9365_Team01_Erlang_Project-History.git
-          git fetch history
-          git status
-          git pull --rebase history main || git pull --allow-unrelated-histories history main
-          git push history main:main
+            -   name: Add Remote Repository
+                env:
+                    GITHUB_TOKEN: ${{ secrets.ERLANG_HISTORY_WORKFLOW }}
+                run: |
+                    echo "Check history repository"
+                    git remote add history https://x-access-token:${{ secrets.ERLANG_HISTORY_WORKFLOW }}@github.com/palangdan-joanalyn/9365_Team01_Erlang_Project-History.git
+                    git fetch history
+                    git status
+                    # git pull --rebase history main || git pull --allow-unrelated-histories history main
+                    # git push history main:main
+                
+            -   name: Push Tag to History Repository
+                run: |
+                    git push history --tags # Push only tags to history repo
