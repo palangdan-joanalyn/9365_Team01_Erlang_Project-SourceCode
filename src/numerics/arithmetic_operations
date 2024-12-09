@@ -1,0 +1,5 @@
+-module(arithmetic_operations).
+
+
+add(Num1, Num2) ->
+    Num1 + Num2.
