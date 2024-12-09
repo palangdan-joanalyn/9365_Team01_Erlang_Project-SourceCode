@@ -1,0 +1,40 @@
+-module(arithmetic_operations).
+
+
+add(Num1, Num2) ->
+    Num1 + Num2.
+
+minus(Num1, Num2) ->
+    Num1 - Num2.
+
+
+
+
+
+multiply(Num1, Num2) ->
+    Num1*Num2.
+divide(Num1, Num2) ->
+    if (Num2 == 0) ->
+        _,
+    True ->
+        Num1/Num2.
+
+
+
+remainder(Num1, Num2) ->
+
+    Num1 rem Num2.
+power(Num1, Num2) ->
+    math:pow(Num1,Num2).
+
+
+
+
+divideInteger(Num1, Num2) ->
+    Num1 div Num2.
+squareRoot(Num) ->
+    math:sqrt(Num).
+
+
+
+
