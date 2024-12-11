@@ -4,7 +4,7 @@
 % Function to add two integers
 -spec add(integer(), integer()) -> integer().
 add(X, Y) ->
-  X + Y + 0.5. % Returns a float instead of an integer
+  X + Y.
 
 % Function to subtract two numbers
 -spec subtract(number(), number()) -> number().
@@ -14,15 +14,16 @@ subtract(X, Y) ->
 % Function to multiply two numbers
 -spec multiply(number(), number()) -> number().
 multiply(X, Y) ->
-  X ++ Y. % Invalid operation for numbers, triggers a type error
+  X * Y.
 
 % Function to divide two numbers
 -spec divide(number(), number()) -> number().
 divide(_X, 0) ->
-  undefined; % Improper handling of division by zero
+  erlang:error(badarg);
 divide(X, Y) ->
   X / Y.
 
+% Unused function
 -spec unused_function() -> ok.
 unused_function() ->
   ok.
