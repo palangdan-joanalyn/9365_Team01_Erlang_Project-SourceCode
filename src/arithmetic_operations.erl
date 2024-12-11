@@ -1,6 +1,6 @@
 -module(arithmetic_operations).
 
--export([add_two_num/2,subtract_two_num/2,multiply_two_num/0,divide_two_num/2,integer_division/2]).
+-export([add_two_num/2,subtract_two_num/2,multiply_two_num/2,divide_two_num/2,integer_division/2]).
 
 
 add_two_num(Num1, Num2) -> Num1 + Num2.
