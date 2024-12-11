@@ -4,13 +4,16 @@ This repository is where the main development happens. All source codes, configu
 
  The various features of GitHub, such as codespaces, pull request, branch rules, issues and actions enabled the execution of code review, issue tracking and CI/CD for this Erlang project.
 
- Every contributor in this repository is advised to create there own working branch where they can commit their changes.
+ Every contributor in this repository is advised to create there own working branch where they can commit their changes by doing the following steps:
+    1. Go to the `<> Code` tab of the repository.
+    2. Click on the `Branches` to view all branches available in the repository.
+    3. Click on the `New Branch` button, input the branch name and confirm to create a new working branch.
 
  In the contributor's working branch, it is recommended to set up their own Erlang codespace to seamlessly work on this project directly through github.
 
     To configure the erlang codespace in Github, do the following steps:
         1. Go to the personal working branch.
-        2. Click on `<>Code` and choose to create a codespace.
+        2. Click on `<> Code` button under the `<> Code` tab and choose to create a codespace.
         3. After redirecting to the codespace, go to the codespace terminal and input the following:
             -> `sudo apt-get update` [ensures that all packages are up to date]
             -> `sudo apt-get install -y erlang` [installs the Erlang OTP in the codespace allowing the execution of Erlang files via erl]
